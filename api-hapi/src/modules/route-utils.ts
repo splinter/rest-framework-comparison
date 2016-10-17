@@ -3,6 +3,10 @@
 import fs = require("fs");
 export default class RouteUtils {
 
+    public static HttpGet = "GET";
+    public static HttpPost = "POST";
+    public static HttpDelete = "DELETE";
+    public static HttpPut = "PUT";
     static readRoutes(routeDir: string) {
         let files = [];
         if (!fs.existsSync(routeDir)) return files;
@@ -10,10 +14,17 @@ export default class RouteUtils {
         return files.map(file => [routeDir, file].join("/"));
     }
 
-    static registerRoutes(router: any, routes: any) {
+    static registerRoutes(server: any, routes: any) {
         routes.forEach(route => {
             if (!fs.existsSync(route)) return;
-            require(route)(router);
+            require(route)(server);
         });
+    }
+
+    static defineMethod(method: string , path: string) {
+      return {
+        method,
+        path
+      };
     }
 }

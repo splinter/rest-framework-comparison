@@ -10,14 +10,24 @@ var RouteUtils = (function () {
         files = fs.readdirSync(routeDir);
         return files.map(function (file) { return [routeDir, file].join("/"); });
     };
-    RouteUtils.registerRoutes = function (router, routes) {
+    RouteUtils.registerRoutes = function (server, routes) {
         routes.forEach(function (route) {
             if (!fs.existsSync(route))
                 return;
-            require(route)(router);
+            require(route)(server);
         });
+    };
+    RouteUtils.defineMethod = function (method, path) {
+        return {
+            method: method,
+            path: path
+        };
     };
     return RouteUtils;
 }());
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = RouteUtils;
+RouteUtils.HttpGet = "GET";
+RouteUtils.HttpPost = "POST";
+RouteUtils.HttpDelete = "DELETE";
+RouteUtils.HttpPut = "PUT";

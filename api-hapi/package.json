@@ -1,0 +1,18 @@
+{
+  "name": "api-hapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^15.1.1"
+  },
+  "devDependencies": {
+    "@types/hapi": "^13.0.36",
+    "@types/node": "^6.0.45"
+  }
+}
