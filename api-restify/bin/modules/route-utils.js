@@ -1,5 +1,5 @@
 "use strict";
-var fs = require('fs');
+var fs = require("fs");
 var RouteUtils = (function () {
     function RouteUtils() {
     }
@@ -8,7 +8,7 @@ var RouteUtils = (function () {
         if (!fs.existsSync(routeDir))
             return files;
         files = fs.readdirSync(routeDir);
-        return files.map(function (file) { return [routeDir, file].join('/'); });
+        return files.map(function (file) { return [routeDir, file].join("/"); });
     };
     RouteUtils.registerRoutes = function (server, routes) {
         routes.forEach(function (route) {
@@ -20,5 +20,5 @@ var RouteUtils = (function () {
     };
     return RouteUtils;
 }());
-exports.__esModule = true;
-exports["default"] = RouteUtils;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = RouteUtils;

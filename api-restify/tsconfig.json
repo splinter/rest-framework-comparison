@@ -6,6 +6,5 @@
         ],
         "rootDir":"src",
         "outDir":"bin"
-    },
-    "exclude":["node_modules"]
+    }
 }
