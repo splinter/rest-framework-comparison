@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "hapi": "^15.1.1"
+    "hapi": "^18.1.0"
   },
   "devDependencies": {
     "@types/hapi": "^13.0.36",
